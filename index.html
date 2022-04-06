@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA calculator</title>
+    <style>
+        table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  text-align: center;
+  
+}
+    </style>
+</head>
+
+<body style="text-align: center; background-color: rgb(155, 101, 101);color: aliceblue;">
+    <h1>CGPA calculator</h1>
+    <form>
+        <label for="sub1">Enter the sub_1 mark</label>
+        <input type="text" id="sub1" name="sub1"><br><br>
+        <label for="sub2">Enter the sub_2 mark</label>
+        <input type="text" id="sub2" name="sub2"><br><br>
+        <label for="sub3">Enter the sub_3 mark</label>
+        <input type="text" id="sub3" name="sub3"><br><br>
+        <label for="sub4">Enter the sub_4 mark</label>
+        <input type="text" id="sub4" name="sub4"><br><br>
+        <label for="sub5">Enter the sub_5 mark</label>
+        <input type="text" id="sub5" name="sub5"><br><br>
+        <label for="sub6">Enter the sub_6 mark</label>
+        <input type="text" id="sub6" name="sub6"><br><br>
+        <label for="gpa">GPA</label>
+        <input type="text" id="gpa" name="gpa"><br><br>
+        <input type="button" id="btn" onclick="func()" value="submit">
+    </form>
+    <br>
+    <br>
+<center>
+  <table style="width: 40%;">
+      <tr>
+          <th>GPA</th>
+          <th>CGPA</th>
+          <th>Grade</th>
+      </tr>
+      <tr>
+          <td><h4 id="demo">  </h4></td>
+          <td><h4 id="demo1"> </h4></td>
+          <td> <h4 id="demo2"> </h4></td>
+      </tr>
+  </table></center>
+    <script>
+        function func(){
+   
+
+            let s1=document.getElementById("sub1");
+            let s2=document.getElementById("sub2");
+            let s3=document.getElementById("sub3");
+            let s4=document.getElementById("sub4");
+            let s5=document.getElementById("sub5");
+            let s6=document.getElementById("sub6");
+            let g=document.getElementById("gpa");
+            let a=parseInt(document.getElementById("gpa").value);
+            let b=(parseInt(s1.value)+parseInt(s2.value)+parseInt(s3.value)+parseInt(s4.value)+parseInt(s5.value)+parseInt(s6.value)+parseInt(g.value))/7;
+            b=b/10;
+            let i=(a+b)/2;
+            document.getElementById("demo").innerHTML = b.toFixed(2);
+            document.getElementById("demo1").innerHTML = i.toFixed(2);
+            
+            if(i>9){
+                document.getElementById("demo2").innerHTML = ("  O");
+            }
+            else if(i>8){
+                document.getElementById("demo2").innerHTML = ("  A");
+            }
+            else if(i>7){
+                document.getElementById("demo2").innerHTML = ("  B");
+            }
+            else if(i>6){
+                document.getElementById("demo2").innerHTML = ("  C");
+            }
+            else{
+                document.getElementById("demo2").innerHTML = ("  Fail");
+            }
+
+        }
+    </script>
+</body>
+</html>
